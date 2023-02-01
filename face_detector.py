@@ -7,16 +7,6 @@ def get_face_detector(modelFile=None,
                       quantized=False):
     """
     Get the face detection caffe model of OpenCV's DNN module
-    
-    Parameters
-    ----------
-    modelFile : string, optional
-        Path to model file. The default is "models/res10_300x300_ssd_iter_140000.caffemodel" or models/opencv_face_detector_uint8.pb" based on quantization.
-    configFile : string, optional
-        Path to config file. The default is "models/deploy.prototxt" or "models/opencv_face_detector.pbtxt" based on quantization.
-    quantization: bool, optional
-        Determines whether to use quantized tf model or unquantized caffe model. The default is False.
-    
     Returns
     -------
     model : dnn_Net
@@ -39,13 +29,6 @@ def get_face_detector(modelFile=None,
 def find_faces(img, model):
     """
     Find the faces in an image
-    
-    Parameters
-    ----------
-    img : np.uint8
-        Image to find faces from
-    model : dnn_Net
-        Face detection model
     Returns
     -------
     faces : list
@@ -68,12 +51,6 @@ def find_faces(img, model):
 def draw_faces(img, faces):
     """
     Draw faces on image
-    Parameters
-    ----------
-    img : np.uint8
-        Image to draw faces on
-    faces : List of face coordinates
-        Coordinates of faces to draw
     Returns
     -------
     None.
